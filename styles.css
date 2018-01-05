@@ -1,7 +1,80 @@
 * {
+   -webkit-box-sizing: border-box;
    box-sizing: border-box;
 }
 
 body {
-   margin: 0 0;
+   margin: 0;
+
+   font-family: 'Poppins', sans-serif;
+   font-weight: 200;
+}
+
+.container {
+   width: 1000px;
+   margin: auto;
+}
+
+h1 {
+   margin: 75px 0;
+
+   font-size: 1rem;
+   font-weight: 200;
+}
+
+h1 span {
+   font-weight: 400;
+}
+
+p {
+   position: absolute;
+   top: -4px;
+   left: 10px;
+
+   font-size: 0.8rem;
+}
+
+.box {
+   position: relative;
+
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+
+   max-width: 500px;
+   height: 300px;
+   margin: 50px auto;
+
+   border: solid 1px #dedede;
+   border-radius: 10px;
+}
+
+/* IMAGE TAG CHANGES */
+
+.image, img {
+   position: relative;
+
+   margin: auto;
+
+   font-size: 1rem;
+}
+
+.image::after {
+   position: absolute;
+   z-index: 1;
+   top: -18px;
+   left: -105px;
+
+   width: 100%;
+   min-width: 300px;
+   padding: 15px 0px 15px 65px;
+
+   content: "" attr(alt) " was not found";
+
+   border: dashed 1px #5d5d5d;
+   background-color: white;
+   background-image: url(spyglass.png);
+   background-repeat: no-repeat;
+   background-position: 15px 50%;
+   background-size: 10%;
 }
