@@ -1,22 +1,27 @@
 * {
    -webkit-box-sizing: border-box;
    box-sizing: border-box;
+   margin: 0;
+   padding: 0;
 }
 
-body {
-   margin: 0;
-
+html {
    font-family: 'Poppins', sans-serif;
    font-weight: 200;
 }
 
 .container {
-   width: 1000px;
-   margin: auto;
+   position: relative;
+
+   width: 80%;
+   max-width: 1000px;
+   margin: 10% auto;
 }
 
 h1 {
-   margin: 75px 0;
+   width: 50%;
+   max-width: 400px;
+   margin: 0 auto;
 
    font-size: 1rem;
    font-weight: 200;
@@ -26,50 +31,42 @@ h1 span {
    font-weight: 400;
 }
 
-p {
-   position: absolute;
-   top: -4px;
-   left: 10px;
-
-   font-size: 0.8rem;
-}
-
 .box {
    position: relative;
 
-   display: -webkit-box;
-   display: -ms-flexbox;
-   display: flex;
-
-   max-width: 500px;
-   height: 300px;
+   width: 50%;
+   max-width: 400px;
+   height: 200px;
    margin: 50px auto;
 
-   border: solid 1px #dedede;
    border-radius: 10px;
+   border: solid 2px #29db9b;
 }
 
 /* IMAGE TAG CHANGES */
 
-.image, img {
-   position: relative;
+img {
+   position: absolute;
+   top: 50%;
+   left: 50%;
 
-   margin: auto;
-
-   font-size: 1rem;
+   -webkit-transform: translate(-50%, -50%);
+   transform: translate(-50%, -50%);
 }
 
 .image::after {
    position: absolute;
    z-index: 1;
-   top: -18px;
-   left: -105px;
+   top: 50%;
+   left: 50%;
 
    width: 100%;
-   min-width: 300px;
-   padding: 15px 0px 15px 65px;
+   min-width: 160px;
+   padding: 15px 0px 15px 40px;
 
-   content: "" attr(alt) " was not found";
+   content: "" attr(alt) "";
+   -webkit-transform: translate(-50%, -50%);
+   transform: translate(-50%, -50%);
 
    border: dashed 1px #5d5d5d;
    background-color: white;
@@ -77,4 +74,53 @@ p {
    background-repeat: no-repeat;
    background-position: 15px 50%;
    background-size: 10%;
+}
+
+/* BOTTOM NAVIGATION */
+
+.navigation {
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-align: end;
+   align-items: flex-end;
+   -ms-flex-align: end;
+   -webkit-box-pack: center;
+   -ms-flex-pack: center;
+   justify-content: center;
+
+   height: 140px;
+   margin: 0 auto;
+
+   font-size: 2rem;
+}
+
+.navigation a:nth-child(2) {
+   padding: 0 30px;
+}
+
+.navigation a:hover {
+   cursor: pointer;
+
+   color: #bbb9bb;
+}
+
+.navigation a:active {
+   -webkit-transform: translateY(1px);
+   transform: translateY(1px);
+}
+
+a {
+   text-decoration: none;
+
+   color: #ebebeb;
+}
+
+@media screen and (max-width: 675px) {
+   .box {
+      width: 100%;
+   }
+   h1 {
+      width: 100%;
+   }
 }
