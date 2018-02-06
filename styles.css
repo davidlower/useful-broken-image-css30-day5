@@ -79,17 +79,14 @@ img {
 /* BOTTOM NAVIGATION */
 
 .navigation {
-   display: -webkit-box;
-   display: -ms-flexbox;
+   position: absolute;
+   bottom: 5%;
+   left: 50%;
+   transform: translateX(-50%);
    display: flex;
-   -webkit-box-align: end;
    align-items: flex-end;
-   -ms-flex-align: end;
-   -webkit-box-pack: center;
-   -ms-flex-pack: center;
    justify-content: center;
 
-   height: 140px;
    margin: 0 auto;
 
    font-size: 2rem;
@@ -124,5 +121,12 @@ a {
    }
    h1 {
       width: 100%;
+   }
+}
+
+@media screen and (max-width: 850px) and (orientation: landscape) {
+   .navigation {
+      position: relative;
+      margin: 0 auto 5%;
    }
 }
